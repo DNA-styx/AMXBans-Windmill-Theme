@@ -17,8 +17,9 @@
 
 		<link rel="stylesheet" type="text/css" href="templates/assets/css/windmill.css">
 
-		<link rel="stylesheet" type="text/css" href="templates/{$design}_css/style.css" />
+    <link rel="stylesheet" type="text/css" href="templates/{$design}_css/style.css" />
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
 		
     <link rel="stylesheet" href="templates/assets/css/tailwind.output.css" />
     <script
@@ -26,24 +27,12 @@
       defer
     ></script>
     <script src="templates/assets/js/init-alpine.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-      defer
-    ></script>
-    <script src="templates/assets/js/charts-lines.js" defer></script>
-    <script src="templates/assets/js/charts-pie.js" defer></script>
 
 
 	<script type="text/javascript" src="templates/{$design}_js/amxbans.js.php"></script>
 	<script type="text/javascript" src="templates/{$design}_js/jquery.js"></script>
 	<script type="text/javascript" src="templates/{$design}_js/tooltip.js"></script>	
 	<script type="text/javascript" src="include/layer.js"></script>
-
-
 
 
 	</head>
@@ -61,7 +50,7 @@
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="/"
           >
-		  {$title|lang}
+          AMXBans
           </a>
 
           <ul>
@@ -73,7 +62,7 @@
 						class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						href="{$menuitem.url2}"
 					>
-						<span class="ml-4">> {$menuitem.lang_key2|lang}</span>
+						<span class="ml-4"><i class="fa-solid fa-chevron-right"></i> {$menuitem.lang_key2|lang}</span>
 					</a>
 				</li>
 				{/if}
@@ -85,7 +74,7 @@
 						class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						href="{$menuitem.url}"
 						>
-						<span class="ml-4">> {$menuitem.lang_key|lang}</span>
+						<span class="ml-4"><i class="fa-solid fa-chevron-right"></i> {$menuitem.lang_key|lang}</span>
 						</a>
 					</li>
 				{/if}
@@ -99,17 +88,19 @@
 					class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 					href="admin.php"
 				>
-					<span class="ml-4">> {"_ADMINAREA"|lang}</span>
+					<span class="ml-4"><i class="fa-solid fa-chevron-right"></i> {"_ADMINAREA"|lang}</span>
 				</a>
 			</li>
-			<li class="relative px-6 py-3">
+<!--
+      <li class="relative px-6 py-3">
 				<a
 					class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 					href="logout.php"
 				>
-					<span class="ml-4">> {"_LOGOUT"|lang} {$smarty.session.uname}</span>
+					<span class="ml-4">>> {"_LOGOUT"|lang} {$smarty.session.uname}</span>
 				</a>
 			</li>
+--> 
 		{else}
 <!--
 			<li class="relative px-6 py-3>
@@ -493,7 +484,7 @@
                 <input
                   class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
                   type="text"
-                  placeholder="Search for projects"
+                  placeholder="Search"
                   aria-label="Search"
                 />
               </div>
@@ -535,6 +526,7 @@
                 </button>
               </li>
               <!-- Notifications menu -->
+<!--
               <li class="relative">
                 <button
                   class="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
@@ -553,7 +545,9 @@
                       d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
                     ></path>
                   </svg>
+-->
                   <!-- Notification badge -->
+<!--
                   <span
                     aria-hidden="true"
                     class="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full dark:border-gray-800"
@@ -605,9 +599,9 @@
                   </ul>
                 </template>
               </li>
-
+-->
 			  <!-- Profile menu -->
-
+<!--
 			  <li class="relative">
                 <button
                   class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -704,7 +698,8 @@
                 </template>
               </li>
             </ul>
-          </div>
+-->
+           </div>
         </header>
 <!-- end main_header.tpl -->
 
@@ -714,14 +709,17 @@
   <h2
 	class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
   >
-
   </h2>
   <!-- CTA -->
   <div
-	class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+	class="flex items-center justify-between p-4 mb-8 text-xl font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
   >
 	<div class="flex items-center">
 	  <span>{$title|lang}{if $title2} - {$title2|lang}{/if}</span>
 	</div>
 
   </div>
+
+
+<div class="w-full overflow-hidden rounded-lg xxxshadow-xs">
+  <div class="w-full overflow-x-auto">
