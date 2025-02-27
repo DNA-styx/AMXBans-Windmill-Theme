@@ -1,0 +1,9 @@
+/* Scroll bar */
+body {
+    scrollbar-color: #4b5563 #1f2937;
+  }
+
+  /* Stop content moving when there is scrollbar */
+main {
+    scrollbar-gutter: stable;
+}

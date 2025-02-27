@@ -1,0 +1,45 @@
+name: Increment git value
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'windmill-theme/templates/assets/version.json'
+      - '.github/**'
+      - 'assets/**'
+      - '**.md'
+      - '.gitignore'
+jobs:
+  test:
+    name: Increment git value
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+  
+      # Step 2: Increment the 'git' value in version.json
+      - name: Increment Git value
+        id: increment
+        run: |
+          # Extract the current value of "git" as a string and remove quotes
+          git_value=$(jq -r '.git' windmill-theme/templates/assets/version.json)
+  
+          # Increment the numeric value
+          new_git_value=$((git_value + 1))
+  
+          # Update the value in the JSON file, ensuring it's saved as a string
+          jq ".git = \"${new_git_value}\"" windmill-theme/templates/assets/version.json > tmp.json && mv tmp.json windmill-theme/templates/assets/version.json
+  
+          # Output the new value
+          echo "new_git_value=${new_git_value}" >> $GITHUB_ENV
+  
+      # Step 3: Commit the updated file
+      - name: Commit changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add windmill-theme/templates/assets/version.json
+          git commit -m "🐳 chore:Inc git value to ${{ env.new_git_value }}"
+          git push
