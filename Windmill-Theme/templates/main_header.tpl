@@ -46,14 +46,9 @@
         class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
       >
         <div class="py-4 text-gray-500 dark:text-gray-400">
-          <a
-            class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-            href="/"
-          >
-          AMXBans
-          </a>
+          <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="{$banner_url}">AMXBans</a>
 
-          <ul>
+    <ul class="mt-6">
 		{foreach from=$menu item=menuitem}
 			{if $smarty.session.loggedin == "true"}
 				{if $menuitem.lang_key2}
@@ -62,7 +57,7 @@
 						class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						href="{$menuitem.url2}"
 					>
-						<span class="ml-4"><i class="fa-solid fa-chevron-right"></i> {$menuitem.lang_key2|lang}</span>
+						<span class="ml-4"><i class="fa fa-caret-right"></i> {$menuitem.lang_key2|lang}</span>
 					</a>
 				</li>
 				{/if}
@@ -74,7 +69,7 @@
 						class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						href="{$menuitem.url}"
 						>
-						<span class="ml-4"><i class="fa-solid fa-chevron-right"></i> {$menuitem.lang_key|lang}</span>
+						<span class="ml-4"><i class="fa fa-caret-right"></i> {$menuitem.lang_key|lang}</span>
 						</a>
 					</li>
 				{/if}
@@ -88,7 +83,7 @@
 					class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 					href="admin.php"
 				>
-					<span class="ml-4"><i class="fa-solid fa-chevron-right"></i> {"_ADMINAREA"|lang}</span>
+					<span class="ml-4"><i class="fa fa-caret-right"></i> {"_ADMINAREA"|lang}</span>
 				</a>
 			</li>
 <!--
@@ -147,12 +142,6 @@
 		<!-- end language drop down -->
 
     </ul>
-
-
-
-
-
-
 
 
         </div>
@@ -705,18 +694,20 @@
 
 
 <main class="h-full overflow-y-auto">
-<div class="container px-6 mx-auto grid">
-  <h2
-	class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
-  >
-  </h2>
-  <!-- CTA -->
+  <div class="container px-6 mx-auto grid">
+
+  {if $banner <> ""}
+    <div class="mt-8 flex justify-center items-center">
+        <a href="{$banner_url}" target="_blank"><img src="images/banner/{$banner}" alt="{$banner_url}" title="{$banner_url}" /></a>
+    </div>
+  {/if}
+
+
+
   <div
-	class="flex items-center justify-between p-4 mb-8 text-xl font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+	class="flex items-center justify-between p-4 mt-8 mb-8 text-xl font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
   >
-	<div class="flex items-center">
-	  <span>{$title|lang}{if $title2} - {$title2|lang}{/if}</span>
-	</div>
+  	<div class="flex items-center"><span>{$title|lang}{if $title2} - {$title2|lang}{/if}</span></div>
 
   </div>
 
