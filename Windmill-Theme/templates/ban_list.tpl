@@ -2,34 +2,6 @@
 
 	<div class="post">
 
-<!-- Pagenation -->
-<!--
-    <div class="pager" style="text-align:right">
-        <span class="first">{"_SITE"|lang} {$ban_page.current} {"_OF"|lang} {$ban_page.max_page}:</span>
-        {if $pagenav.first}
-            <a href="?site={$pagenav.first}"><img src="images/page_start.png" title="{"_FIRST_PAGE"|lang}" alt="{"_FIRST_PAGE"|lang}"></a>
-        {/if}
-        {if $pagenav.prev}
-            <a href="?site={$pagenav.prev}"><img src="images/page_back.png" title="{"_PREVIOUS_PAGE"|lang}" alt="{"_PREVIOUS_PAGE"|lang}"></a>
-        {/if}
-        {foreach from=$pagenav.pages item=page}
-            {if $page.current}
-                <span>{$page.number}</span>
-            {else}
-                <a href="?site={$page.number}">{$page.number}</a>
-            {/if}
-        {/foreach}
-        {if $pagenav.next}
-            <a href="?site={$pagenav.next}"><img src="images/page_next.png" title="{"_NEXT_PAGE"|lang}" alt="{"_NEXT_PAGE"|lang}"></a>
-        {/if}
-        {if $pagenav.last}
-            <a href="?site={$pagenav.last}"><img src="images/page_end.png" title="{"_LAST_PAGE"|lang}" alt="{"_LAST_PAGE"|lang}"></a>
-        {/if}
-    </div>
-    <br /><br />
--->
-<!-- Pagination --> 
-
 		<table frame="box" rules="groups" summary="" class="w-full whitespace-no-wrap">
 				<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
 					<th class="px-4 py-3">&nbsp;</th>
@@ -195,38 +167,84 @@
 				{/if}
 				<!-- Banlist -->
 
-
 				<tr class="text-gray-700 dark:text-gray-400">
-					<td colspan="9" class="px-4 py-3">
+					<td colspan="9">
 						<!-- Pagenation -->
-						<div class="pager" style="text-align:right">
-							<span class="first text-xs text-gray-600 dark:text-gray-400">{"_SITE"|lang} {$ban_page.current} {"_OF"|lang} {$ban_page.max_page}:</span>
-							{if $pagenav.first}
-								<a href="?site={$pagenav.first}"><img src="images/page_start.png" title="{"_FIRST_PAGE"|lang}" alt="{"_FIRST_PAGE"|lang}"></a>
-							{/if}
-							{if $pagenav.prev}
-								<a href="?site={$pagenav.prev}"><img src="images/page_back.png" title="{"_PREVIOUS_PAGE"|lang}" alt="{"_PREVIOUS_PAGE"|lang}"></a>
-							{/if}
-							{foreach from=$pagenav.pages item=page}
-								{if $page.current}
-									<span class="text-xs text-gray-600 dark:text-gray-400">{$page.number}</span>
-								{else}
-									<a href="?site={$page.number}">{$page.number}</a>
-								{/if}
-							{/foreach}
-							{if $pagenav.next}
-								<a href="?site={$pagenav.next}"><img src="images/page_next.png" title="{"_NEXT_PAGE"|lang}" alt="{"_NEXT_PAGE"|lang}"></a>
-							{/if}
-							{if $pagenav.last}
-								<a href="?site={$pagenav.last}"><img src="images/page_end.png" title="{"_LAST_PAGE"|lang}" alt="{"_LAST_PAGE"|lang}"></a>
-							{/if}
+
+						<div
+						class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+						  >
+						  	<span class="flex items-center col-span-3">
+								{"_SITE"|lang} {$ban_page.current} {"_OF"|lang} {$ban_page.max_page}
+							</span>
+							<span class="col-span-2"></span>
+							<span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+								<nav aria-label="Table navigation">
+									<ul class="inline-flex items-center">
+
+									{if $pagenav.first}
+										<li>
+											<a href="?site={$pagenav.first}">
+												<button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple">
+												<i class="fa fa-caret-left"></i><i class="fa fa-caret-left"></i>  
+												</button>
+											</a>
+										</li>
+									{/if}
+									{if $pagenav.prev}
+										<li>
+											<a href="?site={$pagenav.prev}">	
+												<button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple">
+												<i class="fa fa-caret-left"></i> 
+												</button>
+											</a>
+										</li>
+									{/if}
+									{foreach from=$pagenav.pages item=page}
+										{if $page.current}
+											<li>
+												<button
+												class="px-3 py-1 text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple"
+												>
+													{$page.number}
+												</button>
+											</li>
+										{else}
+											<li>
+												<a href="?site={$page.number}">
+													<button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+														{$page.number}
+													</button>
+												</a>
+											</li>
+										{/if}
+									{/foreach}
+									{if $pagenav.next}
+										<li>
+											<a href="?site={$pagenav.next}">
+												<button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple">
+												<i class="fa fa-caret-right"></i> 
+												</button>
+											</a>
+										</li>
+									{/if}
+									{if $pagenav.last}
+										<li>
+											<a href="?site={$pagenav.last}">
+												<button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple">
+												<i class="fa fa-caret-right"></i><i class="fa fa-caret-right"></i> 
+												</button>
+											</a>
+										</li>
+									{/if}
+
+									</ul>
+								</nav>
+						  	</span>
 						</div>
-						<!-- Pagenation -->
+					<!-- Pagenation -->
 					</td>
 				</tr>
-
-
-
 
 			</tbody>
 		</table>
@@ -237,34 +255,7 @@
 
 	<div class="clearer">&nbsp;</div>
 
-<!-- Pagenation -->
-<!--
-    <div class="pager" style="text-align:right">
-
-        <span class="first text-xs text-gray-600 dark:text-gray-400">{"_SITE"|lang} {$ban_page.current} {"_OF"|lang} {$ban_page.max_page}:</span>
-        {if $pagenav.first}
-            <a href="?site={$pagenav.first}"><img src="images/page_start.png" title="{"_FIRST_PAGE"|lang}" alt="{"_FIRST_PAGE"|lang}"></a>
-        {/if}
-        {if $pagenav.prev}
-            <a href="?site={$pagenav.prev}"><img src="images/page_back.png" title="{"_PREVIOUS_PAGE"|lang}" alt="{"_PREVIOUS_PAGE"|lang}"></a>
-        {/if}
-        {foreach from=$pagenav.pages item=page}
-            {if $page.current}
-                <span class="text-xs text-gray-600 dark:text-gray-400">{$page.number}</span>
-            {else}
-                <a href="?site={$page.number}">{$page.number}</a>
-            {/if}
-        {/foreach}
-        {if $pagenav.next}
-            <a href="?site={$pagenav.next}"><img src="images/page_next.png" title="{"_NEXT_PAGE"|lang}" alt="{"_NEXT_PAGE"|lang}"></a>
-        {/if}
-        {if $pagenav.last}
-            <a href="?site={$pagenav.last}"><img src="images/page_end.png" title="{"_LAST_PAGE"|lang}" alt="{"_LAST_PAGE"|lang}"></a>
-        {/if}
-    </div>
-    <div class="clearer"></div>
--->
-	<!-- Pagenation -->  
 
 </div>
 
+<!-- end ban_list.tpl -->
