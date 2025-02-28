@@ -1,0 +1,21 @@
+name: 🚀 Deploy DEV websites
+on:
+    workflow_dispatch:
+    push:
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    - uses: joutvhu/ftp-transfer@v1
+      with:
+        host: ${{ secrets.FTP_HOST }}
+        port: 21
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        commands: |
+          put ./Windmill-Theme/templates/assets/version.json templates/assets/version.json
+
