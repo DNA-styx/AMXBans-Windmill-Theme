@@ -1,4 +1,8 @@
 # AMXBans Windmill Theme
+
+![image](https://github.com/user-attachments/assets/7dabce45-f089-432c-934e-d0d39db3ef65)
+
+
 Soon
 
 
