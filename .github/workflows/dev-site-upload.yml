@@ -1,4 +1,4 @@
-name: 🚀 Deploy DEV websites
+name: 🚀 Upload git version.json to dev site
 on:
     workflow_dispatch:
     push:
