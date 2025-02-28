@@ -17,5 +17,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         commands: |
-          put ./Windmill-Theme/templates/assets/version.json templates/assets/version.json
+          put ./Windmill-Theme/templates/assets/version.json ./templates/assets/version.json
 
