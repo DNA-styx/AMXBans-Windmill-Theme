@@ -6,8 +6,8 @@
 {assign var="title2" value=""}
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMXBans {$version_web} - {$title|lang}{if $title2} - {$title2|lang}{/if}</title>
 
 		<!-- Fonts -->
@@ -16,9 +16,9 @@
 		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" type="text/css" href="templates/assets/css/windmill.css">
-    <link rel="stylesheet" type="text/css" href="templates/{$design}_css/style.css" />
+    <link rel="stylesheet" type="text/css" href="templates/{$design}_css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-    <link rel="stylesheet" href="templates/assets/css/tailwind.output.css" />
+    <link rel="stylesheet" href="templates/assets/css/tailwind.output.css">
 
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
@@ -104,7 +104,7 @@
                     value="{"_USERNAME"|lang}" 
                     onfocus="javascript:if(this.value=languser)this.value='';" 
                     
-                    />
+                  >
                   <input 
                     type="password"
                     size="12" 
@@ -112,8 +112,8 @@
                     value="{"_PASSWORD"|lang}" 
                     onfocus="javascript:if(this.value=langpass)this.value='';" 
                     
-                    />
-                  <input type='checkbox' checked="checked" name='remember' title='{"_REMEMBERME"|lang}' />
+                  >
+                  <input type='checkbox' checked="checked" name='remember' title='{"_REMEMBERME"|lang}'>
                   <button type="submit" name="action" id="action" value="Login">{"_LOGIN"|lang}</button>
                 </form>
               </li>
@@ -224,7 +224,7 @@
                   value="{"_USERNAME"|lang}" 
                   onfocus="javascript:if(this.value=languser)this.value='';" 
                   
-                  />
+                >
                 <input 
                   type="password"
                   size="12" 
@@ -232,8 +232,8 @@
                   value="{"_PASSWORD"|lang}" 
                   onfocus="javascript:if(this.value=langpass)this.value='';" 
                   
-                  />
-                <input type='checkbox' checked="checked" name='remember' title='{"_REMEMBERME"|lang}' />
+                >
+                <input type='checkbox' checked="checked" name='remember' title='{"_REMEMBERME"|lang}'>
                 <button type="submit" name="action" id="action" value="Login">{"_LOGIN"|lang}</button>
               </form>
             </li>
@@ -306,7 +306,7 @@
                   type="text"
                   placeholder="Search"
                   aria-label="Search"
-                />
+                >
               </div>
             </div>
             <ul class="flex items-center flex-shrink-0 space-x-6">
@@ -435,7 +435,7 @@
                     src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
                     alt=""
                     aria-hidden="true"
-                  />
+                  >
                 </button>
                 <template x-if="isProfileMenuOpen">
                   <ul
@@ -529,7 +529,7 @@
 
   {if $banner <> ""}
     <div class="mt-8 flex justify-center items-center">
-        <a href="{$banner_url}" target="_blank"><img src="images/banner/{$banner}" alt="{$banner_url}" title="{$banner_url}" /></a>
+        <a href="{$banner_url}" target="_blank"><img src="images/banner/{$banner}" alt="{$banner_url}" title="{$banner_url}"></a>
     </div>
   {/if}
 
