@@ -161,8 +161,6 @@
         <div class="py-4 text-gray-500 dark:text-gray-400">
           <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="{$banner_url}">AMXBans</a>
 
-          
-          
           <ul>
           {foreach from=$menu item=menuitem}
             {if $smarty.session.loggedin == "true"}
@@ -259,6 +257,7 @@
 
         </div>
       </aside>
+      <!-- end side menu -->
       <div class="flex flex-col flex-1 w-full">
         <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
           <div
@@ -525,7 +524,6 @@
 <!-- end header content -->
 
 <!-- start body content -->
-
 <main class="h-full overflow-y-auto">
   <div class="container px-6 mx-auto grid">
 
