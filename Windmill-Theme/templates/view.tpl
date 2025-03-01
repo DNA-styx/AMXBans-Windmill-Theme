@@ -1,28 +1,91 @@
+<!-- start view.tpl -->
+<!-- Responsive cards -->
+<div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+	<!-- Card -->
+	<div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+	<div class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500">
+		&nbsp;<i class="fa-solid fa-users-slash"></i>&nbsp;
+	</div>
+	<div>
+		<p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+		{"_BANSINDB"|lang}
+		</p>
+		<p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+		{$stats.total}
+		</p>
+	</div>
+	</div>
+	<!-- Card -->
+	<div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+	<div class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500">
+		&nbsp;<i class="fa-solid fa-ban"></i>&nbsp;
+	</div>
+	<div>
+		<p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+		{"_ACTIVEBANS"|lang}
+		</p>
+		<p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+		{$stats.active}
+		</p>
+	</div>
+	</div>
+	<!-- Card -->
+	<div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+	<div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
+		&nbsp;<i class="fa-solid fa-hammer"></i>&nbsp;
+	</div>
+	<div>
+		<p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+		{"_PERM_BANS"|lang}
+		</p>
+		<p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+		{$stats.permanent}
+		</p>
+	</div>
+	</div>
+	<!-- Card -->
+	<div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+	<div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+		&nbsp;<i class="fa-solid fa-scale-balanced"></i>&nbsp;
+	</div>
+	<div>
+		<p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+		{"_ADMINS"|lang}
+		</p>
+		<p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+		{$stats.admins}
+		</p>
+	</div>
+	</div>
+</div>
+
+<!--
 <div class="main" id="main-two-columns">
 	<div class="left" id="main-left">
-		<table frame="box" rules="groups" summary=""> 
+-->
+	<table frame="box" rules="groups" summary="" class="mb-8 w-full whitespace-no-wrap"> 
 			<thead> 
-				<tr> 
-					<th style="width:20px;">{"_MOD"|lang}</th> 
-					<th style="width:20px;">{"_OS"|lang}</th> 
-					<th style="width:20px;">{"_VAC"|lang}</th> 
-					<th>{"_HOSTNAME"|lang}</th> 
-					<th style="width:30px;">{"_PLAYER"|lang}</th> 
-					<th style="width:130px;">{"_MAP"|lang}</th>
+				<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> 
+					<th style="width:20px;" class="px-4 py-3">{"_MOD"|lang}</th> 
+					<th style="width:20px;" class="px-4 py-3">{"_OS"|lang}</th> 
+					<th style="width:20px;" class="px-4 py-3">{"_VAC"|lang}</th> 
+					<th class="px-4 py-3">{"_HOSTNAME"|lang}</th> 
+					<th style="width:30px;" class="px-4 py-3">{"_PLAYER"|lang}</th> 
+					<th style="width:130px;" class="px-4 py-3">{"_MAP"|lang}</th>
 				</tr> 
 			</thead> 
 			
-			<tbody>
+			<tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
 				{if $error}
-					<tr> 
-						<td class="_center" colspan="6">{$error|lang}</td>
+					<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> 
+						<td class="_center px-4 py-3" colspan="6">{$error|lang}</td>
 					</tr> 
 				{else}
 					
 					{foreach from=$server item=serv}
 						
 						{if $serv.game}
-							<tr onclick="NewToggleLayer('info_{$serv.sid}');" onmouseout="this.className='m_out'" onmouseover="this.className='m_over'"> 
+							<tr onclick="NewToggleLayer('info_{$serv.sid}');" onmouseout="this.className='m_out'" onmouseover="this.className='m_over'" class="text-gray-700 dark:text-gray-400"> 
 								<td class="_center"><img alt="{$serv.game}" title="{$serv.game}" src="templates/{$design}_gfx/games/{$serv.mod}.gif" /></td> 
 								<td class="_center"><img alt="{$serv.os}" title="{$serv.os}" src="templates/{$design}_gfx/os/{$serv.os}.png" /></td> 
 								<td class="_center"><img alt="{"_VAC_ALT"|lang}" title="{"_VAC_ALT"|lang}" src="templates/{$design}_gfx/acheat/vac.png" /></td> 
@@ -122,20 +185,23 @@
 							</tr> 
 							<!-- Server Online -->
 						{else}
-							<tr class="offline"> 
-								<td class="_center"><img alt="{$serv.mod}" title="{$serv.mod}" src="templates/{$design}_gfx/games/{$serv.mod}.gif" /></td> 
-								<td class="_center">{"_NA"|lang}</td> 
-								<td class="_center">{"_NA"|lang}</td> 
-								<td>{$serv.hostname}</td> 
-								<td colspan="2">{"_SERVEROFFLINE"|lang}</td>
+							<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> 
+								<td class="_center px-4 py-3 text-sm"><img alt="{$serv.mod}" title="{$serv.mod}" src="templates/{$design}_gfx/games/{$serv.mod}.gif" /></td> 
+								<td class="_center px-4 py-3 text-sm">{"_NA"|lang}</td> 
+								<td class="_center px-4 py-3 text-sm">{"_NA"|lang}</td> 
+								<td class="px-4 py-3 text-sm">{$serv.hostname}</td> 
+								<td colspan="2" class="px-4 py-3 text-sm">{"_SERVEROFFLINE"|lang}</td>
 							</tr> 
 						{/if}
 					{/foreach}
 				{/if}
 			</tbody> 
 		</table> 
+
+<!--
 		<div class="clearer">&nbsp;</div>
-	</div>
+
+		</div>
 
 	<div class="right sidebar" id="sidebar">
 		<div class="section">
@@ -237,6 +303,10 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+
+		</div>
 	<div class="clearer">&nbsp;</div>
-</div>
+
+	</div>
+	-->
+	<!-- end view.tpl -->
