@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AMXBans {$version_web} - {$title|lang}{if $title2} - {$title2|lang}{/if}</title>
+    <title>AMXBans {$version_web} - {$title|lang}{if $title2} - {$title2|lang}{/if}</title>
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,25 +16,19 @@
 		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" type="text/css" href="templates/assets/css/windmill.css">
-
     <link rel="stylesheet" type="text/css" href="templates/{$design}_css/style.css" />
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-		
     <link rel="stylesheet" href="templates/assets/css/tailwind.output.css" />
+
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
     ></script>
     <script src="templates/assets/js/init-alpine.js"></script>
-
-
-	<script type="text/javascript" src="templates/{$design}_js/amxbans.js.php"></script>
-	<script type="text/javascript" src="templates/{$design}_js/jquery.js"></script>
-	<script type="text/javascript" src="templates/{$design}_js/tooltip.js"></script>	
-	<script type="text/javascript" src="include/layer.js"></script>
-
-
+    <script src="templates/{$design}_js/amxbans.js.php"></script>
+    <script src="templates/{$design}_js/jquery.js"></script>
+    <script src="templates/{$design}_js/tooltip.js"></script>	
+    <script src="include/layer.js"></script>
 	</head>
   <body>
     <div
@@ -524,12 +518,13 @@
                   </ul>
                 </template>
               </li>
-            </ul>
 -->
-           </div>
-        </header>
-<!-- end main_header.tpl -->
+        </ul>
+      </div>
+    </header>
+<!-- end header content -->
 
+<!-- start body content -->
 
 <main class="h-full overflow-y-auto">
   <div class="container px-6 mx-auto grid">
@@ -540,8 +535,6 @@
     </div>
   {/if}
 
-
-
   <div
 	class="flex items-center justify-between p-4 mt-8 mb-8 text-xl font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
   >
@@ -549,6 +542,6 @@
 
   </div>
 
-
 <div class="w-full overflow-hidden rounded-lg xxxshadow-xs">
   <div class="w-full overflow-x-auto">
+  <!-- end main_header.tpl -->
