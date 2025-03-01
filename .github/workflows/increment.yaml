@@ -43,3 +43,14 @@ jobs:
           git add Windmill-Theme/templates/assets/version.json
           git commit -m "🐳 chore:Inc git value to ${{ env.new_git_value }}"
           git push
+
+      # Step 4: Update dev site
+      - name: 🚀 Upload version.json to dev site
+        uses: joutvhu/ftp-transfer@v1
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          port: 21
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          commands: |
+            put ./Windmill-Theme/templates/assets/version.json ./templates/assets/version.json
