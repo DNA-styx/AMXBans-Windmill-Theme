@@ -2,6 +2,7 @@
 
 Soon
 
+Based on https://github.com/fysiks1/amxbans/tree/php8-upgrade
 
 ![image](https://github.com/user-attachments/assets/1c833da1-3927-4cb3-8210-7b227fe5d407)
 
