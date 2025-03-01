@@ -86,9 +86,9 @@
 						
 						{if $serv.game}
 							<tr onclick="NewToggleLayer('info_{$serv.sid}');" onmouseout="this.className='m_out'" onmouseover="this.className='m_over'" class="text-gray-700 dark:text-gray-400"> 
-								<td class="_center"><img alt="{$serv.game}" title="{$serv.game}" src="templates/{$design}_gfx/games/{$serv.mod}.gif" /></td> 
-								<td class="_center"><img alt="{$serv.os}" title="{$serv.os}" src="templates/{$design}_gfx/os/{$serv.os}.png" /></td> 
-								<td class="_center"><img alt="{"_VAC_ALT"|lang}" title="{"_VAC_ALT"|lang}" src="templates/{$design}_gfx/acheat/vac.png" /></td> 
+								<td class="_center"><img alt="{$serv.game}" title="{$serv.game}" src="templates/{$design}_gfx/games/{$serv.mod}.gif"></td> 
+								<td class="_center"><img alt="{$serv.os}" title="{$serv.os}" src="templates/{$design}_gfx/os/{$serv.os}.png"></td> 
+								<td class="_center"><img alt="{"_VAC_ALT"|lang}" title="{"_VAC_ALT"|lang}" src="templates/{$design}_gfx/acheat/vac.png"></td> 
 								<td>{$serv.hostname}</td> 
 								<td class="_center">
 									{if $serv.bot_players}
@@ -145,7 +145,7 @@
 															<tbody>
 																<tr>
 																	<td class="_center" colspan="2">
-																		<img style="border:1px #000000 solid;" src="images/maps/{$serv.mod}/{$serv.mappic}.jpg" alt="{$serv.map}" title="{"_MAP"|lang}: {$serv.map}" width="80%" />
+																		<img style="border:1px #000000 solid;" src="images/maps/{$serv.mod}/{$serv.mappic}.jpg" alt="{$serv.map}" title="{"_MAP"|lang}: {$serv.map}" width="80%">
 																	</td>
 																</tr>
 																<tr>
@@ -186,7 +186,7 @@
 							<!-- Server Online -->
 						{else}
 							<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> 
-								<td class="_center px-4 py-3 text-sm"><img alt="{$serv.mod}" title="{$serv.mod}" src="templates/{$design}_gfx/games/{$serv.mod}.gif" /></td> 
+								<td class="_center px-4 py-3 text-sm"><img alt="{$serv.mod}" title="{$serv.mod}" src="templates/{$design}_gfx/games/{$serv.mod}.gif"></td> 
 								<td class="_center px-4 py-3 text-sm">{"_NA"|lang}</td> 
 								<td class="_center px-4 py-3 text-sm">{"_NA"|lang}</td> 
 								<td class="px-4 py-3 text-sm">{$serv.hostname}</td> 

@@ -14,7 +14,7 @@
 				<!-- Start Loop -->
 				{foreach from=$admins item=admin}
 					<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> 
-						<td><a href="http://steamcommunity.com/profiles/{$admin.comid}" target="_blank"><img src="templates/{$design}_gfx/Steam.png" alt="{"_OPENSTEAMCOMSITE"|lang}"/></a>&nbsp;</td>
+						<td><a href="http://steamcommunity.com/profiles/{$admin.comid}" target="_blank"><img src="templates/{$design}_gfx/Steam.png" alt="{"_OPENSTEAMCOMSITE"|lang}"></a>&nbsp;</td>
 						<td>{$admin.nickname}</td> 
 						<td>{$admin.steamid}</td> 
 						<td>{$admin.access}</td> 
@@ -35,7 +35,7 @@
 
 	<div class="post _center">
 		<form method="post" action="">
-			<input type="button" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" name="showflags" value="{"_INFO_ACCESS"|lang}" onclick="$('#info_access').slideToggle('slow');"/><br/><br/>
+			<input type="button" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" name="showflags" value="{"_INFO_ACCESS"|lang}" onclick="$('#info_access').slideToggle('slow');"><br><br>
 		</form>
 		<!--<a href="javascript:void(0);" class="button" onclick="ToggleLayer('info_access');">{"_INFO_ACCESS"|lang}</a>-->
 	</div>

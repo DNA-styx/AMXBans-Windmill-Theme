@@ -35,7 +35,7 @@
 							<tr onclick="NewToggleLayer('layer_{$ban_entry.bid}')" style="cursor: pointer;" class="text-gray-700 dark:text-gray-400">
 						{/if}
 
-						<td class="px-4 py-3 text-sm"><img alt="{if $ban_entry.mod == "html"}{"_WEB"|lang}{else}{$ban_entry.mod|lang}{/if}" title="{if $ban_entry.mod == "html"}{"_WEB"|lang}{else}{$ban_entry.mod|lang}{/if}" src="templates/{$design}_gfx/games/{$ban_entry.mod}.gif" /></td>
+						<td class="px-4 py-3 text-sm"><img alt="{if $ban_entry.mod == "html"}{"_WEB"|lang}{else}{$ban_entry.mod|lang}{/if}" title="{if $ban_entry.mod == "html"}{"_WEB"|lang}{else}{$ban_entry.mod|lang}{/if}" src="templates/{$design}_gfx/games/{$ban_entry.mod}.gif"></td>
 						<td class="_center px-4 py-3 text-sm">{$ban_entry.ban_created|date_format:"%Y-%m-%d"}</td>
 						<td class="_center px-4 py-3 text-sm">{$ban_entry.player_nick}</td>
 						<td class="_center px-4 py-3 text-sm">{$ban_entry.admin_nick}</td>
@@ -62,16 +62,16 @@
 										<th class="_right">
 
 											<form method="post" action="" style="display:inline;">
-												<input type="hidden" name="bid" value="{$ban_entry.bid}" />
-												<input type="hidden" name="site" value="{$ban_page.current}" />
-												<input class="img_input" name="details" type="image" src="templates/{$design}_gfx/page.png" title="{"_DETAILS"|lang}"/>
+												<input type="hidden" name="bid" value="{$ban_entry.bid}">
+												<input type="hidden" name="site" value="{$ban_page.current}">
+												<input class="img_input" name="details" type="image" src="templates/{$design}_gfx/page.png" title="{"_DETAILS"|lang}">
 											</form>
 											{if $smarty.session.bans_delete=="yes" || ($smarty.session.bans_delete=="own" && $smarty.session.uname == $ban_detail.username)}
 
 											<form method="post" action="" style="display:inline;">
-												<input class="img_input" name="del_ban" type="image" src="templates/{$design}_gfx/page_delete.png" onclick="return confirm('{"_DELBAN"|lang}{"_DATALOSS"|lang}');" border="0" title="{"_TIP_DEL"|lang}" />
-												<input type="hidden" name="bid" value="{$ban_entry.bid}" />
-												<input type="hidden" name="details_x" value="1" />
+												<input class="img_input" name="del_ban" type="image" src="templates/{$design}_gfx/page_delete.png" onclick="return confirm('{"_DELBAN"|lang}{"_DATALOSS"|lang}');" border="0" title="{"_TIP_DEL"|lang}">
+												<input type="hidden" name="bid" value="{$ban_entry.bid}">
+												<input type="hidden" name="details_x" value="1">
 											</form>
 											{/if}
 
