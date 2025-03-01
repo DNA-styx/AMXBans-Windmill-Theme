@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMXBans {$version_web} - {$title|lang}{if $title2} - {$title2|lang}{/if}</title>
+    <title>AMXBans - {$title|lang}{if $title2} - {$title2|lang}{/if}</title>
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
