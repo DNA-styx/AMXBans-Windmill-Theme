@@ -2,11 +2,11 @@
 
 	<div class="post">
 
-		<table frame="box" rules="groups" summary=""> 
+		<table frame="box" rules="groups" summary="" class="w-full whitespace-no-wrap"> 
 
 			<thead> 
 
-				<tr>
+				<tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
 
 					<th style="width:150px;">{"_BANDETAILS"|lang}</th> 
 
@@ -42,19 +42,19 @@
 
 			<tbody> 
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_NICKNAME"|lang}</td><td>{$ban_detail.player_nick}</td>
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_STEAMID"|lang}</td><td>{$ban_detail.player_id}</td>
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_STEAMCOMID"|lang}</td>
 
@@ -72,7 +72,7 @@
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_IP"|lang}</td>
 
@@ -100,7 +100,7 @@
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_BANTYPE"|lang}</td>
 
@@ -124,19 +124,19 @@
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_REASON"|lang}</td><td>{$ban_detail.ban_reason}</td>
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_INVOKED"|lang}</td><td>{$ban_detail.ban_created|date_format:"%d. %b %Y - %T"}</td>
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_BANLENGHT"|lang}</td>
 
@@ -160,7 +160,7 @@
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_EXPIRES"|lang}</td>
 
@@ -190,13 +190,13 @@
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_BANBY"|lang}</td><td>{$ban_detail.admin_nick}{if $ban_detail.nickname} <i>({$ban_detail.nickname})</i>{/if}</td>
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_ADMINID"|lang}</td>
 
@@ -224,19 +224,19 @@
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_BANON"|lang}</td><td>{if $ban_detail.server_name == "website"}{"_WEB"|lang}{else}{$ban_detail.server_name}{/if}</td>
 
 				</tr>
 
-				<tr>
+				<tr class="text-gray-700 dark:text-gray-400">
 
 					<td class="fat">{"_TRACKBACK"|lang}</td><td><a href="http://{$smarty.server.HTTP_HOST}{$smarty.server.PHP_SELF}?bid={$ban_detail.bid}">http://{$smarty.server.HTTP_HOST}{$smarty.server.PHP_SELF}?bid={$ban_detail.bid}</a></td>
 
 				</tr>
 
-				<tr id="banedit_{$ban_detail.bid}" style="display:none;">
+				<tr id="banedit_{$ban_detail.bid}" style="display:none;" class="text-gray-700 dark:text-gray-400">
 
 					{include file="layer_banedit.tpl"}
 
