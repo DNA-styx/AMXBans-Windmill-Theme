@@ -55,7 +55,7 @@ Features not/still to be Enabled
 
 ![image](https://github.com/user-attachments/assets/1c833da1-3927-4cb3-8210-7b227fe5d407)
 
-<a href="https://hlstatsx.dnagames.site/hlstats.php?mode=players&game=dods">View Live Demo</a>
+<a href="httpsamxbans.dnagames.site/view.php">View Live Demo</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,7 +150,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LINKS -->
 ## Links
 
-* HLStatsX:CE forum on AlliedMods [https://forums.alliedmods.net/forumdisplay.php?f=156](https://forums.alliedmods.net/forumdisplay.php?f=3)
+* Soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
