@@ -55,7 +55,7 @@ Features not/still to be Enabled
 
 ![image](https://github.com/user-attachments/assets/1c833da1-3927-4cb3-8210-7b227fe5d407)
 
-<a href="httpsamxbans.dnagames.site/view.php">View Live Demo</a>
+<a href="https://amxbans.dnagames.site/view.php">View Live Demo</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
